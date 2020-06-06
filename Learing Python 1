@@ -1,0 +1,198 @@
+'''#!/usr/bin/python 3
+list = ['abcd',786,2.23,'runoob',70.2]
+tinylist = [123,'runoob']
+print(list)
+print(list[0])
+print(tinylist*2)
+print(list+tinylist)'''
+
+
+'''#!/usr/bin/python 3
+tuple = ('abcd',786,2.23,'runoob')
+tinytuple = (123,'irene')
+
+print(tuple)
+print(tuple[0])
+print(tuple+tinytuple)'''
+
+
+
+'''#!/usr/bin/python 3
+
+a = set('abracadabra')
+b = set('alacazam')
+
+print(a)
+
+print(a-b)   #a和b的差集
+
+print(a^b)   #a和b中不同时存在的元素'''
+
+
+
+'''#!/usr/bin/python 3
+dict = {'name':'Irene','age':28}
+print("dict['name']:",dict['name'])   #访问字典里的值'''
+
+'''#!/usr/bin/python 3
+
+#斐波那契数列
+a,b =0,1
+while b<1000:
+    print(b,end=',')
+    a,b = b,a+b'''
+
+
+'''#!/usr/bin/python 3
+#数字猜谜游戏
+number = 7
+guess = -1
+print('数字猜谜游戏')
+while guess != number:
+    guess = int(input('请输入你的数字: '))
+
+    if guess == number:
+        print('你猜对了')
+    elif guess < number:
+        print('猜的数字小了')
+    elif guess > number:
+        print('猜的数字大了')'''
+
+'''#!/usr/bin/python 3     #迭代器
+list = [1,2,3,4]
+it = iter(list)
+for x in it:
+ print(x,end=' ')'''
+
+'''#!/usr/bin/python 3
+class people:
+    def __init__(self,n,a,w):
+        self.name=n
+        self.age=a
+        self.weight=w
+    def speak(self):
+        print("%s 说:我 %d 岁"%(self.name,self.age))
+p = people('irene',27,90)
+p.speak()
+'''
+
+'''#!/usr/bin/python 3
+class king:
+    def __init__(self,real,fake):   #__init__方法含参数，参数通过__init__传递到类的实例化操作上。
+        self.r=real
+        self.i=fake
+
+x = king(3.0,4.5)
+print(x.r,x.i)'''
+
+'''#!/usr/bin/python 3
+class people:   #类定义
+    def __init__(self,n,a,w):  #定义构造方法
+        self.name=n
+        self.age=a
+        self._weight=w
+    def speak(self):
+        print("%s 说我 %s 岁"%(self.name,self.age))
+class student(people):  #单继承
+    def __init__(self,n,a,w,g):
+        people.__init__(self,n,a,w)   #调用父类的构函
+        self.grade=g
+    def speak(self):   #覆盖父类的方法
+        print("%s 说我 %d 岁，我在读 %d 年级"%(self.name,self.age,self.grade))
+
+s = student('irene',27,90,3)
+s.speak()'''
+
+'''#!/usr/bin/python 3
+#类多重继承的一个例子
+class people:
+    def __init__(self,n,a,w):
+        self.name=n
+        self.age=a
+        self._weight=w
+    def speak(self):
+        print("%s 说我 %d 岁"%(self.name,self.age))
+
+class student(people):  #单继承
+    def __init__(self,n,a,w,g):
+        people.__init__(self,n,a,w) #调用父类的构函
+        self.grade=g
+    def speak(self):  #覆写父类的方法
+        print("%s 说我 %d 岁,我在读 %d 年级"%(self.name,self.age,self.grade))
+
+class simple():  #新的类定义，为多重继承做准备
+    def __init__(self,n,t):
+        self.name=n
+        self.topic=t
+    def speak(self):
+        print("我叫 %s ,我是一个演说家，我的主题是 %s "%(self.name,self.topic))
+
+class sample(simple,student):  #多重继承
+    def __init__(self,n,a,w,g,t):
+        student.__init__(self,n,a,w,g)
+        simple.__init__(self,n,t)
+
+test=sample("irene",27,90,3,"python")
+test.speak()   #方法名相同，默认调用的是在括号中排在前面的父类的方法'''
+
+'''#!/usr/bin/python 3
+class Site:
+    def __init__(self,name,url):
+        self.name=name
+        self.__url=url
+    def who(self):
+        print('name :',self.name)
+        print('url :',self.__url)
+    def __foo(self):  #私有方法
+        print('这是私有的方法')
+    def foo(self):
+        print('这是共有的方法')
+        self.__foo()     #引用上面写的私有方法
+
+x=Site('irene','wwww.baidu.com')
+x.who()
+x.foo()
+'''
+
+'''list = ['a','a','a','wyw','wyw']
+print(list.count('a'))
+'''
+
+'''
+list1 = ['what','iam','sorting','by']
+list2 = ['something','else','to','sort']
+paris = zip(list1,list2)
+print([item[1] for item in sorted(paris,key=lambda x :x[0],reverse=True)])
+
+'''
+
+'''x = list(range(11))
+print(list(enumerate(x)))'''
+
+'''print(sum([2**i for i in range(64)]))'''
+
+
+
+'''LIST1 = [1,2,3,4,6,7,8,-9,-11]
+print([i for i in LIST1 if i>0])'''
+
+
+
+'''元组属于不可变序列，不可以直接修改元组中的值，也不可以为元组增加或删除元素'''
+
+
+
+'''g = ((i+2)**2 for i in range(10)) #循环直接遍历生成器对象中的元素
+for item in g:
+    print(item,end=' ')'''
+
+
+'''kdict = {'a': 1, 'b': 2, 'c': 3, 'd': 'wyw'}     # 默认遍历字典的键
+for item in kdict:
+    print(item,end=' ')
+for items in kdict.items():
+    print(items,end=' ')
+'''
+
+kdict = {'a': 1, 'b': 2, 'c': 3, 'd': 'wyw'}
+kdict.items()
